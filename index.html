@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Cena 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <div style="position: absolute;"></div>
+    <div id="menu-left">
+      <h2>Modelos</h2>
+      <div id="model-list">
+        <div class="model-item" id="model1" data-model="forest.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div> 
+       
+        <div class="model-item" id="model2" data-model="castle.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+
+        
+        <div class="model-item" id="model4" data-model="bridge.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+
+        
+        <div class="model-item" id="model3" data-model="well.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+    
+        <div class="model-item" id="model6" data-model="house.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+
+        
+        <div class="model-item" id="model9" data-model="hex_forest_roadA.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+
+        
+        <div class="model-item" id="model8" data-model="hex_forest.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+
+        
+        <div class="model-item" id="model7" data-model="hex_forest_roadB.obj">
+          <canvas class="model-preview" id="preview1"></canvas>
+        </div>
+
+        
+       
+
+
+        
+
+      </div>
+    </div>
+
+    <div id="canvas-container">
+      <canvas id="canvas"></canvas> 
+    </div>
+
+    <div id="menu-right">
+      <h2>Propriedades do Modelo</h2>
+
+      <div id="controls">
+      </div>
+
+      <div id="transform-controls">
+        <div class="control-group">
+          <label for="translate-x">Translação X:</label>
+          <input type="range" id="translate-x" min="-10" max="10" value="0" step="0.1">
+        </div>
+        <div class="control-group">
+          <label for="translate-y">Translação Y:</label>
+          <input type="range" id="translate-y" min="-10" max="10" value="0" step="0.1">
+        </div>
+        <div class="control-group">
+          <label for="translate-z">Translação Z:</label>
+          <input type="range" id="translate-z" min="-10" max="10" value="0" step="0.1">
+        </div>
+        <div class="control-group">
+          <label for="rotate-x">Rotação X:</label>
+          <input type="range" id="rotate-x" min="0" max="360" value="0">
+        </div>
+        <div class="control-group">
+          <label for="rotate-y">Rotação Y:</label>
+          <input type="range" id="rotate-y" min="0" max="360" value="0">
+        </div>
+        <div class="control-group">
+          <label for="rotate-z">Rotação Z:</label>
+          <input type="range" id="rotate-z" min="0" max="360" value="0">
+        </div>
+        <div class="control-group">
+          <label for="scale">Escala:</label>
+          <input type="range" id="scale" min="0.1" max="3" value="1" step="0.1">
+        </div>
+      </div>  
+
+      <div id="save-load-controls">
+        <button id="save-scene">Salvar Cena</button>
+        <input type="file" id="load-scene" accept=".json">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://twgljs.org/dist/4.x/twgl-full.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

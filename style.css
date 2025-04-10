@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden; 
+  background-color: #f0f0f0;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+#menu-left {
+  width: 250px;
+  background-color: transparent;
+  color: white;
+  padding: 0;
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+}
+
+#model-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.model-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.model-preview {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #888;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+#canvas-container {
+  flex-grow: 1;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3fafff;
+  height: 100vh; 
+  width: 95%; 
+}
+
+#menu-right {
+  width: 300px;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 20;
+  transition: transform 0.3s ease-in-out;
+}
+
+button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 1024px) {
+  #menu-left {
+    width: 200px;
+  }
+  #menu-right {
+    width: 250px;
+  }
+  #canvas-container {
+    width: calc(100% - 450px);
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-left, #menu-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  #canvas-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #menu-left, #menu-right {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+  }
+  .model-item, .model-preview {
+    width: 40px;
+    height: 40px;
+  }
+  #canvas-container {
+    width: 100%;
+  }
+}
